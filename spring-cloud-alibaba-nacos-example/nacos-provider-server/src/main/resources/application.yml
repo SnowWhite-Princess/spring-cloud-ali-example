@@ -1,0 +1,12 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: nacos-provider-server-hmy
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.42.138:8848
+        cluster-name: ${spring.application.name}
+

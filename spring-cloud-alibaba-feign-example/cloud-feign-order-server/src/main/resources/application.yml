@@ -1,0 +1,48 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: cloud-feign-order-server-hmy
+  datasource:
+    # 初始化线程池数量  最大数  最小数
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 驱动包 8.0以上的配置
+    # =========== durid 连接池配置===========
+    druid:
+      #===========JDBC 配置===========
+      url: jdbc:mysql://120.25.203.58:3317/db_shop_order?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+      username: root
+      password: 123456
+      initial-size: 5
+      max-active: 20
+      min-idle: 3
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: ${spring.application.name}
+        server-addr:  112.74.42.138:8848
+feign:
+  okhttp:
+    enabled: true
+
+# ========MP配置 无需配置mybatis了============
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/你的包名/*/mappers/*.xml
+  # 如果放在 src/main/resources 下
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      # 主键类型
+      id-type: auto
+      #驼峰下划线转换
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'

@@ -1,0 +1,15 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: nacos-consumer-hmy
+
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: ${spring.application.name}
+        server-addr:  112.74.42.138:8848
+feign:
+  okhttp:
+    enabled: true
+
