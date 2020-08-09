@@ -1,12 +1,11 @@
-package com.smart.product.domain.dto;
-
+package com.smart.product.domain.dto.request;
 
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
-public class ProductDto extends BaseDto {
+public class OrderRequestParams extends BaseRequestParams {
     /**
      * 产品名称
      */
@@ -21,4 +20,5 @@ public class ProductDto extends BaseDto {
      * 产品数量
      */
     private Long productNum;
+
 }

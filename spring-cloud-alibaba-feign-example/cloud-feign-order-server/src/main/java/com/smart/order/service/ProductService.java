@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(value = "cloud-feign-order-server-hmy",path = "/api/product")
+@FeignClient(value = "cloud-feign-product-server-hmy",path = "/api/product")
 public interface ProductService {
     @GetMapping("/list")
     public List<ProductDto> list(@RequestParam(value = "ids") List<Integer> ids);
 
-    @PostMapping("/save/")
-    public String createOrder(@RequestBody OrderRequestParams requestParams);
+    @PostMapping("/save")
+    public ProductDto createProduct(@RequestBody OrderRequestParams orderRequestParams);
+
 }

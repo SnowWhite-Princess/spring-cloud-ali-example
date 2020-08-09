@@ -1,6 +1,7 @@
 package com.smart.base.controller;
 
 import com.smart.base.domain.dto.OrderDto;
+import com.smart.base.domain.dto.PayDto;
 import com.smart.base.domain.dto.request.OrderRequestParams;
 import com.smart.base.service.BaseService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,7 @@ public class FeignController {
 
     @PostMapping("/create")
     //接受客户端发送过来的数据
-    public String createOrder(@RequestBody OrderRequestParams requestParams){
+    public PayDto createOrder(@RequestBody OrderRequestParams requestParams){
         log.info(requestParams.toString());
         return baseService.createOrder(requestParams);
     }

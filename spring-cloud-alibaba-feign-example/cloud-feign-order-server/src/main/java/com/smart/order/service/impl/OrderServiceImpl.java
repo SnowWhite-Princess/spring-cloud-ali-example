@@ -36,11 +36,6 @@ public class OrderServiceImpl implements OrderService {
     ProductService productService;
 
     @Override
-    public List<ProductDto> list(List<Integer> ids) {
-        return null;
-    }
-
-    @Override
     public PayDto createOrder(OrderRequestParams requestParams) {
         // 生成orderNo
         // 保存主表的数据
@@ -97,6 +92,11 @@ public class OrderServiceImpl implements OrderService {
         orderAddressDto.setOrderId(order.getOrderId());
         BeanUtils.copyProperties(orderAddressDto,orderAddress);
         orderAddressMapper.insert(orderAddress);
+
+
+        //保存产品信息
+
+        productService.createProduct(requestParams);
 
         // 返回给客服端数据
         PayDto payDto = new PayDto();

@@ -1,6 +1,7 @@
 package com.smart.base.service.impl;
 
 import com.smart.base.domain.dto.OrderDto;
+import com.smart.base.domain.dto.PayDto;
 import com.smart.base.domain.dto.request.OrderRequestParams;
 import com.smart.base.service.BaseService;
 import com.smart.base.service.OrderService;
@@ -24,7 +25,7 @@ public class BaseServiceImpl implements BaseService {
     }
 
     @Override
-    public String createOrder(OrderRequestParams orderRequestParams) {
+    public PayDto createOrder(OrderRequestParams orderRequestParams) {
         return orderService.createOrder(orderRequestParams);
     }
 }

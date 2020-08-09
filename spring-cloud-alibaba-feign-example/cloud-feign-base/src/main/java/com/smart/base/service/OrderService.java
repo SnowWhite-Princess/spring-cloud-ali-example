@@ -1,6 +1,7 @@
 package com.smart.base.service;
 
 import com.smart.base.domain.dto.OrderDto;
+import com.smart.base.domain.dto.PayDto;
 import com.smart.base.domain.dto.request.OrderRequestParams;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,7 @@ public interface OrderService {
     @GetMapping("/list/")
     public List<OrderDto> getOrderData(@RequestParam(value = "uid") int uid, @RequestParam("page") int page, @RequestParam("size") int size);
 
-    @PostMapping("/save/")
 //    @PostMapping("/order/save/")  拿order-server controller 的接口
-    public String createOrder(@RequestBody OrderRequestParams requestParams);
+    @PostMapping("/save/")
+    public PayDto createOrder(@RequestBody OrderRequestParams requestParams);
 }
