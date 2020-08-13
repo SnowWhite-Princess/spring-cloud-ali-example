@@ -2,6 +2,7 @@ package com.smart.sentinel.example.domian.dto.request;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -10,54 +11,34 @@ import java.util.List;
  */
 @Data
 public class OrderRequestParams extends BaseReqeustParams {
-    private int uid;
-    private List<Integer> ids;
+    //订单号
+    private String orderNo;
+    //总价
+    private Long total;
+    //会员ID
+    private Long memberId;
+    //订单详情ID
+    private Integer ids;
+    //订单详情订单号
+    private Integer orderId;
+    //商品的图片
+    private String productPic;
+    //商品名称
+    private String productName;
+    //商品购买数量
+    private Integer productQuantity;
+    //收货地址
     private String address;
+    //收货手机号
     private String phone;
     /**
-     * 1 表示顺丰
-     * 2 圆通
-     * 3 中通
+     * 1   表示顺丰
+     * 2   表示圆通
+     * 3   表示申通
      */
     private int expressType;
-
-    public int getUid() {
-        return uid;
-    }
-
-    public void setUid(int uid) {
-        this.uid = uid;
-    }
-
-    public List<Integer> getIds() {
-        return ids;
-    }
-
-    public void setIds(List<Integer> ids) {
-        this.ids = ids;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public int getExpressType() {
-        return expressType;
-    }
-
-    public void setExpressType(int expressType) {
-        this.expressType = expressType;
-    }
+    //产品价格
+    private BigDecimal productPrice;
+    //产品数量
+    private Long productNum;
 }

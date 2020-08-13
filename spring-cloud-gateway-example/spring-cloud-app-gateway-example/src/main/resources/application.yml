@@ -1,0 +1,24 @@
+server:
+  port: 9999
+#配置方式
+spring:
+  cloud:
+    gateway:
+      routes:
+#        - id: default-route
+#          # 路由转发的地址
+#          uri: http://127.0.0.1:8080/hello
+#          # 断言 判断是否符合条件
+#          predicates:
+#            - Path=/api/**
+#          filters:
+#            #去掉前缀
+#            - StripPrefix=1
+        - id: query-route
+          # 路由转发的地址
+          uri: http://127.0.0.1:8080/query
+          #断言 判断
+          predicates:
+            - Query=username
+          filters:
+            - StripPrefix=1

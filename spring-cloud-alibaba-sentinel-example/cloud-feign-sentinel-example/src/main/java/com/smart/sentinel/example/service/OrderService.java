@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 网关
  */
-@FeignClient(value = "cloud-feign-order-server", path = "/api/order", fallback = OrderFallBackService.class)
+@FeignClient(value = "cloud-feign-order-server-hmy", path = "/api/order", fallback = OrderFallBackService.class)
 public interface OrderService {
     @GetMapping("/")
     RespEntity<List<OrderDto>> getOrderData(@RequestParam(value = "uid") int uid, @RequestParam("page") int page, @RequestParam("size") int size);

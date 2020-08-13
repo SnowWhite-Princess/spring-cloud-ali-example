@@ -20,8 +20,13 @@
         <module>spring-cloud-alibaba-feign-example</module>
         <module>spring-cloud-alibaba-nacos-example</module>
         <module>spring-cloud-alibaba-sentinel-example</module>
+        <module>spring-cloud-alibaba-dubbo-example</module>
+        <module>spring-cloud-gateway-example</module>
+        <module>spring-cloud-test-example</module>
+        <module>spring-boot-redis-example</module>
     </modules>
     <dependencyManagement>
+
         <dependencies>
             <!--   spring cloud 父依赖-->
             <dependency>

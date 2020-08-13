@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: cloud-alibaba-dubbo-consumer-hmy
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: ${spring.application.name}
+        server-addr:  112.74.42.138:8848
+  # dubbo 相关配置
+dubbo:
+  scan:
+    # 必须放在最前面
+    # dubbo 服务扫描基准包
+    base-packages: com.smart.dubbo.service
+  protocol:
+    # dubbo 协议
+    # http  协议
+    # Hessian 协议
+    # thrift 协议
+    # RMI
+    name: dubbo
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: nacos://112.74.42.138:8848
+
+server:
+  port: 9000

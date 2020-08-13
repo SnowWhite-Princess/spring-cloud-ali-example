@@ -1,0 +1,33 @@
+# 对内RPC  对外REST
+server:
+  port: 9001
+spring:
+  application:
+    name: cloud-alibaba-dubbo-consumer-hmy
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: ${spring.application.name}
+        server-addr:  112.74.42.138:8848
+  # dubbo 相关配置
+dubbo:
+  scan:
+    # 必须放在最前面
+    # dubbo 服务扫描基准包
+    base-packages: com.smart.dubbo.api.service
+  protocol:
+    # dubbo 协议
+    # http  协议
+    # Hessian 协议
+    # thrift 协议
+    # RMI
+    name: dubbo
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: nacos://112.74.42.138:8848
+  cloud:
+    #  表示订阅所有的服务  * 表示订阅索索
+    #  一般是应用程序的名称   如果多个使用,隔开
+    subscribed-services: cloud-alibaba-dubbo-provider-hmy

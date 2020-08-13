@@ -96,7 +96,7 @@ public class OrderServiceImpl implements OrderService {
 
         //保存产品信息
 
-        productService.createProduct(requestParams);
+//        productService.createProduct(requestParams);
 
         // 返回给客服端数据
         PayDto payDto = new PayDto();
