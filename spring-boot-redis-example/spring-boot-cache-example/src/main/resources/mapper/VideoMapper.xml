@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.cache.example.mapper.VideoMapper">
+  <resultMap id="BaseResultMap" type="com.smart.cache.example.entity.Video">
+    <!--@mbg.generated-->
+    <!--@Table tb_video-->
+    <id column="vid" jdbcType="INTEGER" property="vid" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    vid, url, `status`, title
+  </sql>
+</mapper>
