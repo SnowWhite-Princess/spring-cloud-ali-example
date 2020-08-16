@@ -16,6 +16,8 @@
         <module>spring-boot-redis-base</module>
         <module>spring-boot-redis-template</module>
         <module>spring-boot-cache-example</module>
+        <module>spring-boot-redisson-example</module>
+        <module>spring-boot-order-example</module>
     </modules>
     <description>Demo project for Spring Boot</description>
 

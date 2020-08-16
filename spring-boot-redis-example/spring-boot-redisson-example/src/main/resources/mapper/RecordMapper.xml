@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.redisson.mapper.RecordMapper">
+  <resultMap id="BaseResultMap" type="com.smart.redisson.entity.Record">
+    <!--@mbg.generated-->
+    <!--@Table record-->
+    <id column="record_id" jdbcType="INTEGER" property="recordId" />
+    <result column="out_num" jdbcType="INTEGER" property="outNum" />
+    <result column="in_num" jdbcType="INTEGER" property="inNum" />
+    <result column="store_id" jdbcType="INTEGER" property="storeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    record_id, out_num, in_num, store_id
+  </sql>
+</mapper>
